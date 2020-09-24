@@ -1,14 +1,2 @@
 ﻿  __main__.cpp
-D:\GitHub\Ring Buffer\CircularBuffer.hpp(27,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GitHub\Ring Buffer\CircularBuffer.hpp(26): message : while compiling class template member function 'CircularBuffer<int>::CircularBuffer(std::initializer_list<_Ty>)'
-          with
-          [
-              _Ty=int
-          ]
-D:\GitHub\Ring Buffer\__main__.cpp(28): message : see reference to function template instantiation 'CircularBuffer<int>::CircularBuffer(std::initializer_list<_Ty>)' being compiled
-          with
-          [
-              _Ty=int
-          ]
-D:\GitHub\Ring Buffer\__main__.cpp(28): message : see reference to class template instantiation 'CircularBuffer<int>' being compiled
   CircularBuffer.vcxproj -> D:\GitHub\Ring Buffer\CircularBuffer\x64\Debug\CircularBuffer.exe
