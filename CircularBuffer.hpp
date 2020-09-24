@@ -1,24 +1,26 @@
 #include <iostream>
 #include <iterator>
+#include <cstdint>
 #include <initializer_list>
 
 template <class T>
 class CircularBuffer
 {
 public:
+	typedef T valueType;
 	typedef T& referenceType;
+
 private:
 	int m_pos;
-	int m_size;
+	std::size_t m_size;
 	T* m_values;
 
 public:
 	class iterator;
 	class const_iterator;
-	class initializer_list;
 
 public:
-	CircularBuffer(size_t size) : m_pos(0), m_size(size), m_values(nullptr)
+	CircularBuffer(std::size_t size) : m_pos(0), m_size(size), m_values(nullptr)
 	{
 		m_values = new T[size];
 	}
@@ -26,7 +28,7 @@ public:
 	CircularBuffer(std::initializer_list<T> _list) : m_pos(0), m_size(_list.size()), m_values(nullptr)
 	{
 		m_values = new T[_list.size()];
-		int i = 0;
+		uint8_t i = 0;
 		for (auto item : _list)
 		{
 			m_values[i++] = item;
@@ -38,7 +40,7 @@ public:
 		delete[] m_values;
 	}
 
-	int size()
+	std::size_t size()
 	{
 		return m_size;
 	}
@@ -76,12 +78,12 @@ public:
 		return m_values[pos];
 	}
 
-	T& operator[](int pos)
+	referenceType operator[](int pos)
 	{
 		return m_values[pos];
 	}
 
-	const T& operator[](int index) const
+	const referenceType operator[](int index) const
 	{
 		return m_values[index];
 	}
@@ -110,34 +112,66 @@ public:
 	typedef T* pointer;
 	typedef std::forward_iterator_tag iterator_category;
 	typedef int difference_type;
+
+public:
 	iterator(pointer ptr) : ptr_(ptr) {}
+
 	self_type operator++()
 	{
 		self_type i = *this;
 		ptr_++;
 		return i;
 	}
+
 	self_type operator++(int)
 	{
 		ptr_++;
 		return *this;
 	}
+
 	reference operator*()
 	{
 		return *ptr_;
 	}
+
 	pointer operator->()
 	{
 		return ptr_;
 	}
+
 	bool operator==(const self_type& rhs)
 	{
 		return ptr_ == rhs.ptr_;
 	}
+
 	bool operator!=(const self_type& rhs)
 	{
 		return ptr_ != rhs.ptr_;
 	}
+
+private:
+	pointer ptr_;
+};
+
+template <typename T>
+class CircularBuffer<T>::const_iterator
+{
+public:
+	typedef const_iterator self_type;
+	typedef T value_type;
+	typedef T& reference;
+	typedef T* pointer;
+	typedef int difference_type;
+	typedef std::forward_iterator_tag iterator_category;
+
+public:
+	const_iterator(pointer ptr) : ptr_(ptr) { }
+	self_type operator++() { self_type i = *this; ptr_++; return i; }
+	self_type operator++(int junk) { ptr_++; return *this; }
+	const reference operator*() { return *ptr_; }
+	const pointer operator->() { return ptr_; }
+	bool operator==(const self_type& rhs) { return ptr_ == rhs.ptr_; }
+	bool operator!=(const self_type& rhs) { return ptr_ != rhs.ptr_; }
 
 private:
 	pointer ptr_;
