@@ -1,4 +1,4 @@
 *.exe
 *.txt
-.vs/*
-.vscode\settings.json
+.vs/
+.vscode/
