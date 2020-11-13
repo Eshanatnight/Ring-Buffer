@@ -32,75 +32,75 @@
 
 # Code
 
-    Iitialization
+Iitialization
 
-        ```cpp
-            CircularBuffer<ValueType> _objectName(_size);
-        ```
+```cpp
+    CircularBuffer<ValueType> _objectName(_size);
+```
 
-        or
+    or
 
-        ```cpp
-            CircularBuffer<ValueType> _objectName{_initList};
-        ```
-
-
-    ---
+```cpp
+    CircularBuffer<ValueType> _objectName{_initList};
+```
 
 
-    Size Funtion
-
-        ```cpp
-            _objectName.size();
-        ```
+---
 
 
-    ---
+Size Funtion
+
+```cpp
+    _objectName.size();
+```
 
 
-    Iterator Support - Range Based for loop support (const and non-const)
+---
 
 
-    ---
+Iterator Support - Range Based for loop support (const and non-const)
 
 
-    Adding Funtions
-
-        ```cpp
-            _objectName.add(_item);
-        ```
-
-        or
-
-        ```cpp
-            _objectName.push_back(_item);
-        ```
-
-        or
-
-        ```cpp
-            _objectName.push_front(_item);
-        ```
+---
 
 
-    ---
+Adding Funtions
+
+```cpp
+    _objectName.add(_item);
+```
+
+or
+
+```cpp
+    _objectName.push_back(_item);
+```
+
+or
+
+```cpp
+    _objectName.push_front(_item);
+```
 
 
-    Getting an Element
-
-        ```cpp
-            _objectName.get(_item);
-        ```
-
-        or
-
-        ```cpp
-            _objectName[_item];
-        ```
+---
 
 
-    ---
+Getting an Element
+
+```cpp
+    _objectName.get(_item);
+```
+
+or
+
+```cpp
+    _objectName[_item];
+```
 
 
-    <br/>
-    <br/>
+---
+
+
+<br/>
+<br/>
