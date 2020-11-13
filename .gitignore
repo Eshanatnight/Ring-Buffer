@@ -1,4 +1,24 @@
+# Binaries
+/bin
 *.exe
+
+# txt files
 *.txt
+.log
+
+# IDE and Editors
 .vs/
 .vscode/
+
+#vs
+/Debug
+*.tlog
+*.obj
+*.exe.recipe
+*.ilk
+*.pdb
+*.idp
+/x64
+*.sln
+*.vcxproj
+*.vcxproj.*
