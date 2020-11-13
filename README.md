@@ -4,11 +4,16 @@
     but more efficient.
 
 <br/>
+
+
 ---
+
 ```cpp
     contributions are welcome
 ```
+
 ---
+
 
 ### Languages and Tools:
 
@@ -30,7 +35,9 @@
         ```cpp
             CircularBuffer<ValueType> _objectName(_size);
         ```
+
         or
+
         ```cpp
             CircularBuffer<ValueType> _objectName{_initList};
         ```
@@ -38,6 +45,7 @@
     ---
 
     ### Size Funtion
+
         ```cpp
             _objectName.size();
         ```
@@ -49,14 +57,19 @@
     ---
 
     ### Adding Funtions
+
         ```cpp
             _objectName.add(_item);
         ```
+
         or
+
         ```cpp
             _objectName.push_back(_item);
         ```
+
         or
+
         ```cpp
             _objectName.push_front(_item);
         ```
@@ -64,10 +77,13 @@
     ---
 
     ### Getting an Element
+
         ```cpp
             _objectName.get(_item);
         ```
+
         or
+
         ```cpp
             _objectName[_item];
         ```
