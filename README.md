@@ -38,7 +38,7 @@ Iitialization
     CircularBuffer<ValueType> _objectName(_size);
 ```
 
-    or
+or
 
 ```cpp
     CircularBuffer<ValueType> _objectName{_initList};
